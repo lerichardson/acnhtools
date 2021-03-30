@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>acnhtools.com python test</title>
+        <link href="/imgs/favicon.ico" rel="shortcut icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  background: #040d15;
+}
+.btn-1 {
+  position: relative;
+  display: flex;
+  padding: 1rem 2rem;
+  margin: 1rem 0;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  border-radius: 40px;
+  overflow: hidden;
+  background: linear-gradient(90deg, #0162c8, #92efff);
+  border: none;
+}
+
+span {
+  position: absolute;
+  background: #fff;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  border-radius: 50%;
+  animation: animate 1s linear forwards;
+}
+@keyframes animate {
+  0% {
+    width: 0px;
+    height: 0px;
+    opacity: 0.5;
+  }
+  100% {
+    width: 500px;
+    height: 500px;
+    opacity: 0;
+  }
+}
+.h2-1 {
+    color: white;
+    font-family: ;
+}
+        </style>
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.min.js"></script>
+        <script>
+            function goPython() {
+                $.ajax({
+                    url: "pystst.py",
+                    context: document.body
+                }).done(function () {
+                    alert('Worked.');;
+                });
+            }
+        </script>
+	<!-- Foxlytix Pixel -->
+	<script async src="https://foxlytix.com/pixel/reddYrQzlAk3S4mt"></script>
+	<!-- END of Foxlytix Pixel -->
+    </head>
+    <body>
+        <button class="btn-1" onclick="goPython()">DOES IT WORK?</button>
+        <script type="text/javascript">
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach(function (button) {
+                button.addEventListener('click', function (event) {
+                    let x = event.clientX - event.target.offsetLeft;
+                    let y = event.clientY - event.target.offsetTop;
+                    let rippleElement = document.createElement('span');
+                    rippleElement.style.left = x + 'px';
+                    rippleElement.style.top = y + 'px';
+                    this.appendChild(rippleElement);
+                    setTimeout(function () {
+                        rippleElement.remove();
+                    }, 800);
+                });
+            });
+        </script>
+        <h2 class="h2-1">If the Python works, an alert should show telling you it worked.</h2>
+    </body>
+</html>
